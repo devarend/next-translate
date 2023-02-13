@@ -1,19 +1,18 @@
-import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
-import {useTranslation} from "@/translate/hooks/useTranslation";
-import {withTranslation} from "@/translate/hoc/withTranslation";
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import { useTranslation } from "@/translate/hooks/useTranslation";
+import { withTranslation } from "@/translate/hoc/withTranslation";
 
-export const getServerSideProps = withTranslation( ({req, language}) => {
-    return {
-        props: {
-            language
-        }
-    }
-})
+export const getServerSideProps = withTranslation(({ req, language }) => {
+  return {
+    props: {
+      language,
+    },
+  };
+});
 
 export default function Home() {
-
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <>
@@ -25,11 +24,9 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            {t.TEST}
-          </p>
+          <p>{t.TEST}</p>
         </div>
       </main>
     </>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import { translations } from "@/translate/translations";
 import { ReactElement, ReactFragment } from "react";
-import {createTypedContext} from "@/translate/context/context";
+import { createTypedContext } from "@/translate/context/context";
 
 export const Context = createTypedContext({ translation: translations["en"] });
 export type Languages = keyof typeof translations;
