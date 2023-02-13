@@ -1,6 +1,7 @@
 import Negotiator from "negotiator";
 import { IncomingMessage } from "http";
 import { translations } from "@/translate/translations";
+import {Languages} from "@/translate/context/TranslateContext";
 
 export const FALLBACK_LANGUAGE = "en";
 
@@ -11,5 +12,5 @@ export const getLanguage = (req: IncomingMessage) => {
   if (!language || !(language in translations)) {
     return FALLBACK_LANGUAGE;
   }
-  return language;
+  return language as Languages;
 };
